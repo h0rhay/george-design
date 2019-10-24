@@ -70,7 +70,7 @@
         id='rolypoly'
         tabindex='-1'
         aria-disabled='true'
-        href='javascript:doBarrelRoll()'
+        href='/'
         title='Oh ho ho, click me!'
         >o</a
       >rge Clark
@@ -141,7 +141,8 @@
     <script>
       var isForward = true;
       var body = document.body;
-      var mainHeading = document.getElementById('heading')
+      var mainHeading = document.getElementById('heading');
+      var o = document.getElementById('rolypoly');
 
       body.addEventListener(
         'animationend',
@@ -151,12 +152,17 @@
         false
       );
 
-      body.addEventListener('mousemove', function(e) {
+      mainHeading.addEventListener('mousemove', function(e) {
         mouseColorShadows(e)
       });
 
+      o.addEventListener('click', function(e) {
+        e.preventDefault();
+        doBarrelRoll();
+      })
+
       function doBarrelRoll() {
-        var o = document.getElementById('rolypoly');
+        
         var bodyRect = body.getBoundingClientRect();
         var oRect = o.getBoundingClientRect();
         var x = (oRect.left + oRect.right) / 2 - bodyRect.left;
