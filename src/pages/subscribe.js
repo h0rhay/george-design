@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Layout from "../components/layout"
 
 const Subscribe = () => {
   useEffect(() => {
@@ -45,10 +46,12 @@ const Subscribe = () => {
   }, []); // Only run this effect once when the component mounts
 
   return (
-    <div style={{ width: "100%", margin: "0 auto" }}>
-      <h1 style={{fontSize:'2rem', lineHeight: '1', marginBottom: '2rem'}}>Web Maintain package</h1>
-      <div style={{ width: "50%", margin: "0 auto" }} id="paypal-button-container-P-3WC75109KJ064444NM4DGVSA"></div>
-    </div>
+    <Layout>
+      <div style={{ width: "100%", margin: "0 auto" }}>
+        <h1 style={{fontSize:'2rem', lineHeight: '1', marginBottom: '2rem'}}>Web Maintain package</h1>
+        <div style={{ width: "50%", margin: "0 auto" }} id="paypal-button-container-P-3WC75109KJ064444NM4DGVSA"></div>
+      </div>
+    </Layout>
   );
 };
 
